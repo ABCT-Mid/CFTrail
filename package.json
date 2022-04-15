@@ -1,0 +1,23 @@
+{
+  "name": "cftrail",
+  "version": "1.0.0",
+  "description": "---",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose --coverage --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ABCT-Mid/CFTrail.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ABCT-Mid/CFTrail/issues"
+  },
+  "homepage": "https://github.com/ABCT-Mid/CFTrail#readme",
+  "dependencies": {
+    "jest": "^27.5.1"
+  }
+}
