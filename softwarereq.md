@@ -46,3 +46,12 @@
  - As a user I want to be able to compare my scores to other users
  - As a user I want to receive different questions as I play
 
+## DATA FLOW
+<img width="1553" alt="game-progress" src="https://user-images.githubusercontent.com/84699682/163650658-d65f0e5d-c6b9-4f55-92f9-c818d84e518f.PNG">
+<img width="1312" alt="uml" src="https://user-images.githubusercontent.com/84699682/163650675-b50d5142-be7d-44b7-9484-208e3abab15b.PNG">
+<img width="1728" alt="Screen Shot 2022-04-15 at 3 19 55 PM" src="https://user-images.githubusercontent.com/84699682/163650680-02e389bb-e4af-4ac4-a214-8725cade8f91.png">
+
+## NON FUNCTIONAL REQUIREMENTS
+  - Security: Addressed by using AWS cloud services
+  - Authentication / Authorization: All requests will be made via our server. Authorization will be made by dev team
+  - Testability: above 50% test coverages. Integration / Unit tests to ensure application behaves as expected (CI/CD)
