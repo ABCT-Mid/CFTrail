@@ -28,7 +28,7 @@
   - User can play the game at least answering 3 questions
   - User can see their results (stored in database)
 
-# STRETCH GOALS
+## STRETCH GOALS
     - Target Stretch:
       - Front end results page w/stylings
       - CLI Images
@@ -38,3 +38,11 @@
   - Persist created character
   - Implement villages / towns
   - NPC interaction
+
+## FUNCTIONAL REQUIREMENTS
+ - As a user I want to be able to create a character
+ - As a user I want to be able to work on my coding skills
+ - As a user I want to be entertained while receiving intellectual value
+ - As a user I want to be able to compare my scores to other users
+ - As a user I want to receive different questions as I play
+
