@@ -13,7 +13,6 @@ const resultModel = dynamoose.model('Results', resultSchema);
 
 exports.handler = async (event) => {
   const response = { statusCode: null, body: null }
- 
   try {
     let results = await resultModel.scan().exec();
     response.statusCode = 200;

@@ -19,7 +19,6 @@ exports.handler = async (event) => {
     score: event.queryStringParameters.score,
     username: event.queryStringParameters.username
   }
- 
   try {
     let postResult = await resultModel.create(newResult)
     response.statusCode = 200;
