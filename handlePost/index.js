@@ -19,6 +19,9 @@ exports.handler = async (event) => {
     score: event.body.score,
     username: event.body.username,
   };
+
+  console.log(newResult);
+
   try {
     let postResult = await resultModel.create(newResult);
     response.statusCode = 200;
