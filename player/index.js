@@ -5,14 +5,14 @@ AWS.config.update({
   region: "us-west-2",
 });
 
-require('dotenv').config();
-
-let apiURL = process.env.API_URL
+require("dotenv").config();
 
 const axios = require("axios");
-
 const prompt = require("prompt");
+const levelOne = require("../levelOne/levelOne.js");
+const levelTwo = require("../levelTwo/levelTwo.js");
 
+let apiURL = process.env.API_URL;
 prompt.start();
 
 const sns = new AWS.SNS();
@@ -83,57 +83,18 @@ function getLevel1_0(key) {
       console.log(parsed.body);
     })
     .then(() => {
-      setTimeout(() => {
-        console.log(
-          "TRUE OR FALSE: You can change a const value after setting it."
-        );
-        instanceOne();
+      setTimeout(async () => {
+       await levelOne(character);
+       let level2_0 = {
+         FunctionName: "Game_Level2_0",
+         Payload: JSON.stringify(character),
+       };
+       getLevel2_0(level2_0);
       }, 3000);
     })
     .catch((error) => {
       console.error(error);
     });
-}
-
-function instanceOne() {
-  prompt.get("answer", function (err, result) {
-    if (
-      result.answer.toLowerCase() === "tru" ||
-      result.answer.toLowerCase() === "true" ||
-      result.answer.toLowerCase() === "t"
-    ) {
-      console.clear();
-      console.log(
-        'OOPS, Incorrect! "const" is a signal that the identifier won\'t be reassigned.'
-      );
-      character.score -= 5;
-      console.log(character);
-      let level2_0 = {
-        FunctionName: "Game_Level2_0",
-        Payload: JSON.stringify(character),
-      };
-      getLevel2_0(level2_0);
-    } else if (
-      result.answer.toLowerCase() === "false" ||
-      result.answer.toLowerCase() === "f"
-    ) {
-      console.clear();
-      console.log("Wow, I'm impressed! here is a token from me old boot");
-      setTimeout(() => {
-        console.log("THE PRISONER HANDS YOU 15 SHILINGS!");
-        character.score += 5;
-        console.log(character);
-        let level2_0 = {
-          FunctionName: "Game_Level2_0",
-          Payload: JSON.stringify(character),
-        };
-        getLevel2_0(level2_0);
-      }, 3000);
-    } else {
-      console.log("Please answer with only a True or False");
-      instanceOne();
-    }
-  });
 }
 
 function getLevel2_0(key) {
@@ -150,50 +111,19 @@ function getLevel2_0(key) {
     .then(() => {
       setTimeout(() => {
         // Refactor for actual input for switch
-        console.log("How do you find the minimum of x and y using JavaScript?");
-        console.log("");
-        console.log("A: min(x,y);");
-        console.log("B: Math.min(x,y)");
-        console.log("C: Math.min(x y)");
-
-        instanceTwo();
+        levelTwo(character);
+        setTimeout(() => {
+          let level3_0 = {
+            FunctionName: "Game_Level3_0",
+            Payload: JSON.stringify(character),
+          };
+          getLevel3_0(level3_0);
+        }, 5000);
       }, 9000);
     })
     .catch((error) => {
       console.error(error);
     });
-}
-
-function instanceTwo() {
-  prompt.get("answer", function (error, result) {
-    if (
-      result.answer.toLowerCase() === "a" ||
-      result.answer.toLowerCase() === "c"
-    ) {
-      console.log(
-        "You tripped and rolled your ankle dropping the 15 shillings you received earlier. Stamina -10"
-      );
-      character.score -= 5;
-      console.log(character);
-      let level3_0 = {
-        FunctionName: "Game_Level3_0",
-        Payload: JSON.stringify(character),
-      };
-      getLevel3_0(level3_0);
-    } else if (result.answer.toLocaleLowerCase() === "b") {
-      console.log("That is correct, agility +5");
-      character.score += 5;
-      console.log(character);
-      let level3_0 = {
-        FunctionName: "Game_Level3_0",
-        Payload: JSON.stringify(character),
-      };
-      getLevel3_0(level3_0);
-    } else {
-      console.log("Please choose only A, B, or C");
-      instanceTwo();
-    }
-  });
 }
 
 function getLevel3_0(key) {
@@ -264,7 +194,6 @@ function getLevel3_0(key) {
       });
     });
 }
-
 
 sns
   .publish(gamePrologue)
