@@ -5,6 +5,10 @@ AWS.config.update({
   region: "us-west-2",
 });
 
+require('dotenv').config();
+
+let apiURL = process.env.API_URL
+
 const axios = require("axios");
 
 const prompt = require("prompt");
@@ -236,7 +240,6 @@ function getLevel3_0(key) {
               });
           }, 10000);
           async function postResults() {
-            let resultsUrl = `https://25ubvmru83.execute-api.us-west-2.amazonaws.com/Production/game`;
             let data = {
               id: character.occupation,
               username: character.name,
@@ -246,7 +249,7 @@ function getLevel3_0(key) {
             let headers = { "Content-Type": "application/json" };
 
             try {
-              await axios.post(resultsUrl, JSON.stringify(data), {
+              await axios.post(apiURL.toString(), JSON.stringify(data), {
                 headers: headers,
               });
             } catch (error) {
