@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/ABCT-Mid/CFTrail#readme",
   "dependencies": {
+    "axios": "^0.26.1",
     "jest": "^27.5.1"
   }
 }
