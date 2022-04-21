@@ -8,6 +8,8 @@ const resultSchema = new dynamoose.Schema({
   username: String
 })
 
+//refactor to import 
+
 const resultModel = dynamoose.model('Results', resultSchema);
 
 
