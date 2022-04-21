@@ -4,7 +4,8 @@
   "description": "---",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose --coverage --watchAll"
+    "test": "jest --verbose --coverage --watchAll",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -18,8 +19,12 @@
   },
   "homepage": "https://github.com/ABCT-Mid/CFTrail#readme",
   "dependencies": {
+    "@colors/colors": "^1.5.0",
     "axios": "^0.26.1",
     "dotenv": "^16.0.0",
-    "jest": "^27.5.1"
+    "figlet": "^1.5.2",
+    "jest": "^27.5.1",
+    "terminal-image": "^2.0.0",
+    "toilet": "^1.0.7"
   }
 }
