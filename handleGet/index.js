@@ -1,5 +1,6 @@
 'use strict';
 
+
 const resultModel =  require('../models/result-model');
 
 exports.handler = async (event) => {
