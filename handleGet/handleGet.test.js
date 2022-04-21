@@ -1,7 +1,7 @@
 'use strict';
 
 const handleGet = require('./index');
-jest.mock('../models/result-model.js', () => {
+jest.mock('./result-model.js', () => {
   let resultModel = {
     scan: jest.fn(() => resultModel ),
     exec: jest.fn(() => resultModel),
@@ -13,7 +13,7 @@ jest.mock('../models/result-model.js', () => {
 describe('Testing our handleGet lambda function', () => {
 
   let event = {};
-  const resultModel = require('../models/result-model');
+  const resultModel = require('./result-model');
   
   test('Should return a status code and a response body', async () => {
     let response = await handleGet.handler(event);

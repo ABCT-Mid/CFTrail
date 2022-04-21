@@ -4,8 +4,9 @@ const dynamoose = require('dynamoose');
 
 const resultSchema = new dynamoose.Schema({
   id: String,
-  score: String,
+  health: String,
   username: String,
+  answeredCorrectly: String,
 });
 
 const resultModel = dynamoose.model('Results', resultSchema);

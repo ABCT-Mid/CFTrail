@@ -34,18 +34,18 @@ figlet('Yo!', function (error, data) {
   console.log(await terminalImage.file('./assets/snowy-wagon.jpg'));
 })();
 
-// figlet.text('Stacks and Overflows!', {
-//   font: '',
-//   horizontalLayout: 'default',
-//   verticalLayout: 'default',
-//   width: 100,
-//   whitespaceBreak: true,
-// }, function (err, data) {
-//   if (err) {
-//     console.log('Something went wrong...');
-//     console.dir(err);
-//     return;
-//   }
-//   console.log(data.red);
-//});
+figlet.text('Stacks and Overflows!', {
+  font: '',
+  horizontalLayout: 'default',
+  verticalLayout: 'default',
+  width: 100,
+  whitespaceBreak: true,
+}, function (err, data) {
+  if (err) {
+    console.log('Something went wrong...');
+    console.dir(err);
+    return;
+  }
+  console.log(data.red);
+});
 
