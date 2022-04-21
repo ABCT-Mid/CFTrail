@@ -1,14 +1,6 @@
-"use strict";
+'use strict';
 
-const dynamoose = require("dynamoose");
-
-const resultSchema = new dynamoose.Schema({
-  id: String,
-  score: String,
-  username: String,
-});
-
-const resultModel = dynamoose.model("Results", resultSchema);
+const resultModel = require('../models/result-model');
 
 exports.handler = async (event) => {
   const response = { statusCode: null, body: null };
@@ -29,8 +21,8 @@ exports.handler = async (event) => {
     response.body = JSON.stringify(postResult);
   } catch (error) {
     response.statusCode = 500;
-    response.body = JSON.stringify(new Error("Cannot Post to Results Table"));
-    console.log("-----------CATCH BLOCK---------------", error);
+    response.body = JSON.stringify(new Error('Cannot Post to Results Table'));
+    console.log('-----------CATCH BLOCK---------------', error);
   }
 
   return response;
