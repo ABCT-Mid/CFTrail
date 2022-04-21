@@ -1,7 +1,7 @@
 'use strict';
 
 const handlePost = require('./index');
-jest.mock('../models/result-model', () => {
+jest.mock('./result-model', () => {
   let resultModel = {
     create: jest.fn(() => resultModel),
   };
@@ -19,7 +19,7 @@ describe('Testing our handlePost lambda function', () => {
   let event = {
     body: JSON.stringify(eventBody),
   };
-  const resultModel = require('../models/result-model');
+  const resultModel = require('./result-model');
 
   test('Should return a status code of 200 and a resoponse body', async () => {
     let response =  await handlePost.handler(event);

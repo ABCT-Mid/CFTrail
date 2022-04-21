@@ -1,7 +1,7 @@
 'use strict';
 
 
-const resultModel =  require('../models/result-model');
+const resultModel =  require('./result-model');
 
 exports.handler = async (event) => {
   const response = { statusCode: null, body: null };
