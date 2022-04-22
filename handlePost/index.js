@@ -9,7 +9,7 @@ exports.handler = async (event) => {
 
   const newResult = {
     id: jsonBody.id,
-    score: jsonBody.score,
+    health: jsonBody.health,
     username: jsonBody.username,
     answeredCorrectly: jsonBody.answeredCorrectly
   };
