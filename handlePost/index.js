@@ -11,6 +11,7 @@ exports.handler = async (event) => {
     id: jsonBody.id,
     score: jsonBody.score,
     username: jsonBody.username,
+    answeredCorrectly: jsonBody.answeredCorrectly
   };
 
   console.log(newResult);
