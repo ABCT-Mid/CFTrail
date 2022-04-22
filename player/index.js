@@ -72,7 +72,7 @@ function introPrisoner() {
     console.log(
       '*You receive a menacing look from a scrawny bloke in chains*',
     );
-  }, 3000);
+  }, 4000);
 }
 
 async function initCharacterObjectIntro() {
@@ -99,9 +99,6 @@ function prologueBulk() {
     await initCharacterObjectIntro();
     console.clear();
     console.log('Great you are: ', character);
-    //TODO
-    //let user say yes or no to reinput data
-    //if no then call getPrologue() again
     let keys = getKey('Game_Level1_0', character);
     getLevel1_0(keys);
   }, 5000);
@@ -140,7 +137,7 @@ function getLevel1_0(key) {
     .then(() => {
       setTimeout(() => {
         question1_1();
-      }, 3000);
+      }, 4000);
     })
     .catch((error) => {
       console.error(error);
@@ -156,7 +153,7 @@ function serveIncorrectDialogue1_1() {
   setTimeout(() => {
     console.clear();
     question1_2();
-  }, 3000);
+  }, 4000);
 }
 
 function serveCorrectDialogue1_1() {
@@ -168,7 +165,7 @@ function serveCorrectDialogue1_1() {
   setTimeout(() => {
     console.clear();
     question1_2();
-  }, 3000);
+  }, 4000);
 }
 
 function serveQuestion1_1() {
@@ -180,14 +177,14 @@ function serveQuestion1_1() {
     ) {
       setTimeout(() => {
         serveIncorrectDialogue1_1();
-      }, 3000);
+      }, 4000);
     } else if (
       result.answer.toLowerCase() === 'false' ||
       result.answer.toLowerCase() === 'f'
     ) {
       setTimeout(() => {
         serveCorrectDialogue1_1();
-      }, 3000);
+      }, 4000);
     } else {
       console.log('Please answer with only a True or False');
       question1_1();
@@ -211,7 +208,7 @@ function serveIncorrectDialogue1_2() {
   setTimeout(() => {
     console.clear();
     question1_3();
-  }, 3000);
+  }, 4000);
 }
 
 function serveCorrectDialogue1_2() {
@@ -223,7 +220,7 @@ function serveCorrectDialogue1_2() {
   setTimeout(() => {
     console.clear();
     question1_3();
-  }, 3000);
+  }, 4000);
 }
 
 function question1_2() {
@@ -235,7 +232,7 @@ function question1_2() {
     ) {
       setTimeout(() => {
         serveIncorrectDialogue1_2();
-      }, 2000);
+      }, 3000);
     } else if (
       result.answer.toLowerCase() === 'tru' ||
       result.answer.toLowerCase() === 'true' ||
@@ -244,7 +241,7 @@ function question1_2() {
       console.log('Shiver me timbers!  Here is a jewel I have been keeping in me eye socket');
       setTimeout(() => {
         serveCorrectDialogue1_2();
-      }, 2000);
+      }, 3000);
     } else {
       console.log('Please answer with only a True or False');
       question1_2();
@@ -282,7 +279,7 @@ function serveCorrectDialogue1_3() {
       Payload: JSON.stringify(character),
     };
     getLevel2_0(level2_0);
-  }, 3000);
+  }, 4000);
 }
 
 function question1_3() {
@@ -342,7 +339,7 @@ function serveIncorrectDialogue2_1() {
   setTimeout(() => {
     console.clear();
     question2_2();
-  }, 3000);
+  }, 4000);
 }
 
 function serveCorrectDialogue2_1() {
@@ -354,7 +351,7 @@ function serveCorrectDialogue2_1() {
   setTimeout(() => {
     console.clear();
     question2_2();
-  }, 3000);
+  }, 4000);
 }
 
 function question2_1() {
@@ -370,11 +367,11 @@ function question2_1() {
     ) {
       setTimeout(() => {
         serveIncorrectDialogue2_1();
-      }, 2000);
+      }, 3000);
     } else if (result.answer.toLocaleLowerCase() === 'b') {
       setTimeout(() => {
         serveCorrectDialogue2_1();
-      }, 2000);
+      }, 3000);
     } else {
       console.log('Please choose only A, B, or C');
       question2_1();
@@ -391,7 +388,7 @@ function serveIncorrectDialogue2_2() {
   setTimeout(() => {
     console.clear();
     question2_3();
-  }, 3000);
+  }, 4000);
 }
 
 function serveCorrectDialogue2_2() {
@@ -404,7 +401,7 @@ function serveCorrectDialogue2_2() {
   setTimeout(() => {
     console.clear();
     question2_3();
-  }, 3000);
+  }, 4000);
 }
 
 function question2_2() {
@@ -420,11 +417,11 @@ function question2_2() {
     ) {
       setTimeout(() => {
         serveIncorrectDialogue2_2();
-      }, 2000);
+      }, 4000);
     } else if (result.answer.toLocaleLowerCase() === 'c') {
       setTimeout(() => {
         serveCorrectDialogue2_2();
-      }, 2000);
+      }, 4000);
     } else {
       console.log('Please choose only A, B, or C');
       question2_2();
@@ -445,7 +442,7 @@ function serveIncorrectDialogue2_3() {
       Payload: JSON.stringify(character),
     };
     getLevel3_0(level3_0);
-  }, 3000);
+  }, 4000);
 }
 
 function serveCorrectDialogue2_3() {
@@ -461,11 +458,11 @@ function serveCorrectDialogue2_3() {
       Payload: JSON.stringify(character),
     };
     getLevel3_0(level3_0);
-  }, 3000);
+  }, 4000);
 }
 
 function question2_3() {
-  console.log('What is the proper for loop to iterate an x amount of times?'.brightWhite);
+  console.log('What is the proper for loop to iterate 15 times?'.brightWhite);
   console.log('');
   console.log('A:  for of');
   console.log('B:  for each');
@@ -479,11 +476,11 @@ function question2_3() {
     ) {
       setTimeout(() => {
         serveIncorrectDialogue2_3();
-      }, 2000);
+      }, 4000);
     } else if (result.answer.toLocaleLowerCase() === 'd') {
       setTimeout(() => {
         serveCorrectDialogue2_3();
-      }, 2000);
+      }, 4000);
     } else {
       console.log('Please choose only A, B, C or D');
       question2_3();
@@ -517,14 +514,14 @@ function serveCorrectDialogue3_1() {
   setTimeout(() => {
     console.clear();
     question3_2();
-  }, 3000);
+  }, 4000);
 }
 
 function serveCorrectDialogue3_1v2() {
   console.log('You fool!! Don\'t forget the importance of semi-colons, you heathen!!');
   setTimeout(() => {
     question3_1();
-  }, 2000);
+  }, 4000);
 }
 
 function serveIncorrectDialogue3_1() {
@@ -535,7 +532,7 @@ function serveIncorrectDialogue3_1() {
   setTimeout(() => {
     console.clear();
     question3_2();
-  }, 3000);
+  }, 4000);
 }
 
 function question3_1() {
@@ -544,15 +541,15 @@ function question3_1() {
     if (result.answer === 'Queue.enqueue();') {
       setTimeout(() => {
         serveCorrectDialogue3_1();
-      }, 2000);
+      }, 4000);
     } else if (result.answer === 'Queue.enqueue()') {
       setTimeout(() => {
         serveCorrectDialogue3_1v2();
-      }, 2000);
+      }, 4000);
     } else {
       setTimeout(() => {
         serveIncorrectDialogue3_1();
-      }, 2000);
+      }, 4000);
     }
   });
 }
@@ -566,7 +563,7 @@ function serveCorrectDialogue3_2() {
   setTimeout(() => {
     console.clear();
     question3_3();
-  }, 3000);
+  }, 4000);
 }
 
 function serveCorrectDialogue3_2v2() {
@@ -578,7 +575,7 @@ function serveCorrectDialogue3_2v2() {
   setTimeout(() => {
     console.clear();
     question3_3();
-  }, 3000);
+  }, 4000);
 }
 
 function serveIncorrectDialogue3_2() {
@@ -588,7 +585,7 @@ function serveIncorrectDialogue3_2() {
   setTimeout(() => {
     console.clear();
     question3_3();
-  }, 3000);
+  }, 4000);
 }
 
 function question3_2() {
@@ -597,15 +594,15 @@ function question3_2() {
     if (result.answer === 'async function sum(a,b)' || result.answer === 'async function sum(a,b){}') {
       setTimeout(() => {
         serveCorrectDialogue3_2();
-      }, 2000);
+      }, 4000);
     } else if (result.answer === 'async function sum(a,b);' || result.answer === 'async function sum(a,b){};') {
       setTimeout(() => {
         serveCorrectDialogue3_2v2();
-      }, 2000);
+      }, 4000);
     } else {
       setTimeout(() => {
         serveIncorrectDialogue3_2();
-      }, 2000);
+      }, 4000);
     }
   });
 }
@@ -649,7 +646,7 @@ function serveCorrectDialogue3_3() {
 function serveIncorrectDialogue3_3() {
   setTimeout(() => {
     console.log('....');
-  }, 3000);
+  }, 4000);
   setTimeout(() => {
     console.log('.......');
   }, 6000);
@@ -682,7 +679,7 @@ function question3_3() {
       setTimeout(() => {
         serveCorrectDialogue3_3();
         postResults();
-      }, 2000);
+      }, 4000);
     } else {
       serveIncorrectDialogue3_3();
       postResults();
@@ -723,3 +720,5 @@ sns
   .catch((error) => {
     console.log(error);
   });
+
+module.exports = { prologueLambdaServesIntro }
