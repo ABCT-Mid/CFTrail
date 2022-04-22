@@ -695,7 +695,7 @@ async function postResults() {
     id: character.occupation,
     username: character.name,
     health: character.health.toString(),
-    answeredCorrectly: answeredCorrectly,
+    answeredCorrectly: answeredCorrectly.toString(),
   };
 
   let headers = { 'Content-Type': 'application/json' };
