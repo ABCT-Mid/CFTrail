@@ -630,7 +630,7 @@ function serveCorrectDialogue3_3() {
     console.log(data.green);
   });
 
-  figlet.text('Stacks and Overflows!', {
+  figlet.text('Stacks Fellows Overflows!', {
     font: 'Efti Wall',
     horizontalLayout: 'default',
     verticalLayout: 'default',
@@ -642,7 +642,7 @@ function serveCorrectDialogue3_3() {
       console.dir(err);
       return;
     }
-    console.log(data.blue);
+    console.log(data.rainbow);
   });
 }
 
