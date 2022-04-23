@@ -22,3 +22,9 @@
 
 ## WRRC
 <img width="1728" alt="Screen Shot 2022-04-15 at 3 19 55 PM" src="https://user-images.githubusercontent.com/84699682/163648977-5623e2a3-68be-4ed5-9ec3-b7e0f1591291.png">
+
+## [Software Reqs](./softwarereq.md)
+
+## [Team Agreement](./TeamAgreement.md)
+
+## [Tests](./tests.md)
